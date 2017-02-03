@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SwiftEyes_Example' do
+  pod 'SwiftEyes', :path => '../'
+
+  target 'SwiftEyes_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
