@@ -1,0 +1,19 @@
+PODS:
+  - OpenCV-Dynamic (3.2.3)
+  - SwiftEyes (0.1.0):
+    - OpenCV-Dynamic (~> 3.x)
+
+DEPENDENCIES:
+  - SwiftEyes (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftEyes:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  OpenCV-Dynamic: cec705875ba331237c4e5e1bf7d85e6454beee02
+  SwiftEyes: a5bb48cbb6788f531d66f5e8c2e3789af2bc9cda
+
+PODFILE CHECKSUM: 8b7151d1bbaccd85f48940ea9fd9fee9a51f4a21
+
+COCOAPODS: 1.2.0

@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import SwiftEyes
 
 class ViewController: UIViewController {
 
+    let eyes = SwiftEyes()
+
+    @IBOutlet weak var cameraImageView: UIImageView!
+
+    @IBOutlet weak var displayImageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        eyes.start(cameraImageView: cameraImageView, displayImageView: displayImageView)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
