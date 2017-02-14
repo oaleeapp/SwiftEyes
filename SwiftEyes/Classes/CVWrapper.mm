@@ -12,6 +12,9 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <stdio.h>
+#include "ObjectTracker.hpp"
+#include "ObjectColorTracking.hpp"
+
 
 @interface CVWrapper () <CvVideoCameraDelegate>
 {
@@ -22,14 +25,28 @@
 @implementation CVWrapper
 {
 
+    bool isMotionTracking;
+
     UIImageView * imageView;
     CvVideoCamera * videoCamera;
-
-
     cv::Mat previousFrame;
 
     UIImageView * testImagView;
     bool isFirst;
+
+
+
+    //initial min and max HSV filter values.
+    //these will be changed using trackbars
+    int H_MIN;
+    int H_MAX;
+    int S_MIN;
+    int S_MAX;
+    int V_MIN;
+    int V_MAX;
+
+    int x;
+    int y;
 }
 
 -(void) startCameraImageView:(UIImageView *) cameraImageView andDisplayImageView:(UIImageView *) displayImageView {
@@ -45,43 +62,106 @@
     videoCamera.rotateVideo = true;
     [videoCamera start];
     isFirst = true;
+    isMotionTracking = true;
 
+}
+
+-(void) startDisplayImageView:(UIImageView *) displayImageView andFilterImageView:(UIImageView *) filterImageView{
+
+    imageView = displayImageView;
+    videoCamera = [[CvVideoCamera alloc] initWithParentView:imageView];
+    videoCamera.delegate = self;
+    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionFront;
+    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
+    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
+    videoCamera.defaultFPS = 20;
+    videoCamera.rotateVideo = true;
+    [videoCamera start];
+    isFirst = true;
+    isMotionTracking = false;
+
+    testImagView = filterImageView;
 }
 
 - (void)processImage:(cv::Mat &)image
 {
-
-
-
     cv::Mat im_copy = image.clone();
     cv::Mat currentMat;
-    cv::Mat differenceImage;
-    cv::cvtColor(image,currentMat,cv::COLOR_BGR2GRAY);
 
-    if (!isFirst) {
+    if (isMotionTracking) {
 
-        // Compare
-        cv::absdiff(currentMat,previousFrame,differenceImage);
+        //our sensitivity value to be used in the absdiff() function
+        const static int SENSITIVITY_VALUE = 20;
+        //size of blur used to smooth the intensity image output from absdiff() function
+        const static int BLUR_SIZE = 10;
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // do work here
-            testImagView.image = [self UIImageFromCVMat:differenceImage];
-        });
+        cv::Mat differenceImage;
+        cv::cvtColor(image,currentMat,cv::COLOR_BGR2GRAY);
 
+        if (!isFirst) {
+
+            // Compare
+            cv::absdiff(currentMat,previousFrame,differenceImage);
+            //blur the image to get rid of the noise. This will output an intensity image
+            blur(differenceImage,differenceImage,cv::Size(BLUR_SIZE,BLUR_SIZE));
+            //			//threshold again to obtain binary image from blur output
+            threshold(differenceImage,differenceImage,SENSITIVITY_VALUE,255,cv::THRESH_BINARY);
+            searchForMovement(differenceImage, image);
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // do work here
+                if (testImagView != nil){
+                    testImagView.image = [self UIImageFromCVMat:differenceImage];
+                }
+            });
+            
+        } else {
+            isFirst = false;
+        }
+        
+        
+        
+        
+        previousFrame = currentMat;
     } else {
-        isFirst = false;
+        cv::Mat hsvImage;
+        cv::Mat threshold;
+
+        cv::cvtColor(image,hsvImage,cv::COLOR_BGR2HSV);
+        cv::inRange(hsvImage, cv::Scalar(H_MIN,S_MIN,V_MIN), cv::Scalar(H_MAX,S_MAX,V_MAX), threshold);
+
+        morphOps(threshold);
+
+            // do work here
+        if (testImagView != nil){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                testImagView.image = [self UIImageFromCVMat:threshold];
+            });
+        }
+
+
+
+        trackFilteredObject(x, y, threshold, image);
     }
-
-    previousFrame = currentMat;
-
-    //do not confuse this with a threshold image, we will need to perform thresholding afterwards.
-    //			cv::absdiff(grayImage1,grayImage2,differenceImage);
 }
 
+-(void) reset{
+    [videoCamera stop];
+    isFirst = true;
+}
 
 
 + (NSString *)itWorks {
     return @"Hello World!";
+}
+
+- (void)setHMin: (int)hMin andHMax: (int)hMax andSMin: (int)sMin andSMax: (int)sMax andVMin: (int)vMin andVMax: (int)vMax{
+    H_MIN = hMin;
+    H_MAX = hMax;
+    S_MIN = sMin;
+    S_MAX = sMax;
+    V_MIN = vMin;
+    V_MAX = vMax;
 }
 
 -(UIImage *)turnToGray:(UIImage *) image{
