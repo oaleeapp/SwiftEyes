@@ -18,8 +18,5 @@ Pod::Spec.new do |s|
     s.libraries = "c++", "ObjC", "z"
     s.dependency 'OpenCV-Dynamic', '~> 3.x'
 
-    s.subspec 'VideoIO' do |sp|
-        sp.source_files = 'Classes/VideoIO'
-    end
 
 end
