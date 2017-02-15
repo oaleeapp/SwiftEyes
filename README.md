@@ -11,6 +11,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+If you didn't install CocoaPods yet, you can install from [here](https://cocoapods.org/).
+
+And before you run `pod install`, please be sure that you have install `cmake` as well.
+
+To download it, simply use [Homebrew](https://brew.sh/) to install:
+
+```ruby
+brew install cmake
+```
+
 ## Installation
 
 SwiftEyes is available through [CocoaPods](http://cocoapods.org). To install
@@ -26,4 +36,4 @@ Victor Lee, specialvict@gmail.com
 
 ## License
 
-SwiftEyes is available under the MIT license. See the LICENSE file for more info.
+BSD license, respect OpenCV license as well.
