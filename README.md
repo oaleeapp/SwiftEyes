@@ -11,6 +11,17 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 > If this is first time you use [OpenCV-Dynamic](https://github.com/Legoless/OpenCV-Dynamic) as the dependency, it'll take time to install.
 
+
+## Videos
+
+![motion tracking](http://i.giphy.com/kLL70o7Y9Y5Fe.gif)
+![color tracking](http://i.giphy.com/3o6YgbtjjTUor5YDyo.gif)
+
+[![motion tracking](https://img.youtube.com/vi/i3xDONms4u4/0.jpg)](https://youtu.be/i3xDONms4u4)
+[![color tracking](https://img.youtube.com/vi/EDMr6cGkV0Y/0.jpg)](https://youtu.be/EDMr6cGkV0Y)
+
+
+
 ## Requirements
 
 If you didn't install CocoaPods yet, you can install from [here](https://cocoapods.org/).
