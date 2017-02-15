@@ -9,6 +9,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+> If this is first time you use [OpenCV-Dynamic](https://github.com/Legoless/OpenCV-Dynamic) as the dependency, it'll take time to install.
+
 ## Requirements
 
 If you didn't install CocoaPods yet, you can install from [here](https://cocoapods.org/).
