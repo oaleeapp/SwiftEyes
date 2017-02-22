@@ -1,16 +1,18 @@
-# jekyll-simple
+# The Swift OpenCV Framework
 
-## simple
-simple is a theme designed for blogger using static site generator like jekyll, Hexo etc.
+This framework wants to let developer use `Swift` to access `OpenCV` library,
 
-Especially for those who writes in both Chinese and English. The font-type setting looks really good when writers use Chinese mixed with English.
+Due to the fact that `OpenCV` is wrote in `C++`, if someone want to use it by `Swift`,
 
-Supposedly, this could work with Japanese as well but never had a chance to try.
+it needs to be access through `Objective-C` wrapper.
 
-## Story behind this theme
+However, it is not easy for noobs to use both `Swift` and `Objective-C`, especially for Objective-C, which syntax is very different from others.
 
-It has been long that using font with Chinese in web was a tedious and time-consuming work. It would be almost impossible to make different OS or devices to look the same.
+So I'm want to build this framework for who want to access the `OpneCV` API on the iOS platform by `Swift`.
 
-iOS 9 has pulished some new fonts in Chinese and I decided to make one theme that looks good on iOS devices, at the same time, making it acceptable on computers using other fonts.
 
-So mobile goes first, then the macOS.
+And the main job of this framework is to wrap the `C++` class by `Objective-C`, then through bridge header, others can use it by `Swift`.
+
+Here is the project's link:
+
+[SwiftEyes](https://github.com/oaleeapp/SwiftEyes)
