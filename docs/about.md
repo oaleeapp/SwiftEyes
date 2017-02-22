@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# SwiftEyes
+# [SwiftEyes](https://github.com/oaleeapp/SwiftEyes)
 
 [![CI Status](http://img.shields.io/travis/Victor Lee/SwiftEyes.svg?style=flat)](https://travis-ci.org/Victor Lee/SwiftEyes)
 [![Version](https://img.shields.io/cocoapods/v/SwiftEyes.svg?style=flat)](http://cocoapods.org/pods/SwiftEyes)
