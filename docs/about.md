@@ -4,8 +4,55 @@ title: About
 permalink: /about/
 ---
 
-This is a simple Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/).  Plus, you can find a lot of themes at [jekyllthemes.org](http://jekyllthemes.org/)
+# SwiftEyes
 
-You can find the source code for this theme at: <data data-icon="ei-sc-github"></data>  [jekyll-simple](https://github.com/wild-flame/jekyll-simple)
+[![CI Status](http://img.shields.io/travis/Victor Lee/SwiftEyes.svg?style=flat)](https://travis-ci.org/Victor Lee/SwiftEyes)
+[![Version](https://img.shields.io/cocoapods/v/SwiftEyes.svg?style=flat)](http://cocoapods.org/pods/SwiftEyes)
+[![License](https://img.shields.io/cocoapods/l/SwiftEyes.svg?style=flat)](http://cocoapods.org/pods/SwiftEyes)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftEyes.svg?style=flat)](http://cocoapods.org/pods/SwiftEyes)
 
-You can find the source code for Jekyll at <data data-icon="ei-sc-github"></data>  [jekyll](https://github.com/jekyll/jekyll)
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+> If this is first time you use [OpenCV-Dynamic](https://github.com/Legoless/OpenCV-Dynamic) as the dependency, it'll take time to install.
+
+
+## Videos
+
+![motion tracking](http://i.giphy.com/kLL70o7Y9Y5Fe.gif)
+![color tracking](http://i.giphy.com/3o6YgbtjjTUor5YDyo.gif)
+
+[![motion tracking](https://img.youtube.com/vi/i3xDONms4u4/0.jpg)](https://youtu.be/i3xDONms4u4)
+[![color tracking](https://img.youtube.com/vi/EDMr6cGkV0Y/0.jpg)](https://youtu.be/EDMr6cGkV0Y)
+
+
+
+## Requirements
+
+If you didn't install CocoaPods yet, you can install from [here](https://cocoapods.org/).
+
+And before you run `pod install`, please be sure that you have install `cmake` as well.
+
+To download it, simply use [Homebrew](https://brew.sh/) to install:
+
+```ruby
+brew install cmake
+```
+
+## Installation
+
+SwiftEyes is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "SwiftEyes"
+```
+
+## Author
+
+Victor Lee, specialvict@gmail.com
+
+## License
+
+BSD license, respect OpenCV license as well.
