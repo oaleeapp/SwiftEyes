@@ -9,8 +9,8 @@
 title: SwiftEyes
 email: specialvict@gmail.com
 description: > # An easy way to access OpenCV library from Swift.
-baseurl: "/jekyll-simple" # the subpath of your site, e.g. /blog
-url: "https://oaleeapp.github.io/SwiftEyes/" # the base hostname & protocol for your site
+baseurl: "/SwiftEyes" # the subpath of your site, e.g. /blog
+url: "https://oaleeapp.github.io/" # the base hostname & protocol for your site
 twitter_username: oaleeapp
 github_username:  oaleeapp
 
