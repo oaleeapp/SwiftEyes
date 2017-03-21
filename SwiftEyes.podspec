@@ -17,10 +17,5 @@ Pod::Spec.new do |s|
     s.frameworks = "QuartzCore", "CoreVideo", "AssetsLibrary", "CoreMedia", "CoreImage", "CoreGraphics", "AVFoundation", "Accelerate", "UIKit", "ImageIO", "Foundation"
     s.libraries = "c++", "ObjC", "z"
     s.dependency 'OpenCV-Dynamic', '~> 3.x'
-    s.subspec 'Wrapper' do |sp|
-        s.subspec 'Core' do |sp|
-            sp.source_files = 'Classes/Wrapper/Core/**/*'
-        end
-    end
 
 end
