@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		9B8D45781E66FE5600EBA83A /* SEMotionTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D45771E66FE5600EBA83A /* SEMotionTrackViewController.swift */; };
 		9BA431CB1E504DF4009169BD /* SEColorTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA431CA1E504DF4009169BD /* SEColorTrackViewController.swift */; };
 		9BBE9B261E52CC5400D4709D /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE9B251E52CC5400D4709D /* ExampleTableViewController.swift */; };
 		FD5DD938EA49585839A7F61E /* Pods_SwiftEyes_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E262C02B78B4160B0CB8C01 /* Pods_SwiftEyes_Example.framework */; };
@@ -48,6 +49,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		66E7AC1C7F6C17CD5EA49D14 /* Pods-SwiftEyes_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftEyes_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftEyes_Tests/Pods-SwiftEyes_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9B8D45771E66FE5600EBA83A /* SEMotionTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEMotionTrackViewController.swift; sourceTree = "<group>"; };
 		9BA431CA1E504DF4009169BD /* SEColorTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEColorTrackViewController.swift; sourceTree = "<group>"; };
 		9BBE9B251E52CC5400D4709D /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
 		FC40BE58BC2E8C2DDD9D4CC1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				9BA431CA1E504DF4009169BD /* SEColorTrackViewController.swift */,
+				9B8D45771E66FE5600EBA83A /* SEMotionTrackViewController.swift */,
 				9BBE9B251E52CC5400D4709D /* ExampleTableViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -371,6 +374,7 @@
 			files = (
 				9BBE9B261E52CC5400D4709D /* ExampleTableViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				9B8D45781E66FE5600EBA83A /* SEMotionTrackViewController.swift in Sources */,
 				9BA431CB1E504DF4009169BD /* SEColorTrackViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

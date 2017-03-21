@@ -27,6 +27,7 @@ class ViewController: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         eyes.reset()
+        
     }
 
     override func didReceiveMemoryWarning() {
