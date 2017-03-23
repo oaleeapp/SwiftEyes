@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "SwiftEyes"
-    s.version      = "0.1.2"
+    s.version      = "0.1.3"
     s.summary      = "An easy way to access OpenCV library from Swift."
     s.homepage     = "https://github.com/oaleeapp/SwiftEyes"
     s.license      = { :type => '3-clause BSD', :file => 'LICENSE' }
