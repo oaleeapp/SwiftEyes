@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/oaleeapp/SwiftEyes.git', :tag => s.version.to_s }
 
     s.source_files = 'SwiftEyes/Classes/**/*'
+    s.private_header_files = 'SwiftEyes/Classes/Private/*.h'
 
     s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
 
