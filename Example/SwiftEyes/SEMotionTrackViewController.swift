@@ -44,13 +44,19 @@ class SEMotionTrackViewController: UIViewController, OCVVideoCameraDelegate {
 
     func processImage(_ image: OCVMat!) {
 
+        // Parameters
         let blurSize = 10
         let sensitivityValue = 20.0
         var differenceMat = OCVMat(cgSize: CGSize(width: image.size.width, height: image.size.height), type: image.type, channels: image.channels)
 
 
+        // from BGR to RGB
         OCVOperation.convertColor(fromSource: image, toDestination: image, with: .typeBGRA2RGBA)
+
+        // set current mat
         currentMat = image.clone()
+
+        // convert current mat from RGB to GrayScale
         OCVOperation.convertColor(fromSource: currentMat, toDestination: currentMat, with: .typeRGBA2GRAY)
 
         if previousMat != nil {
@@ -64,6 +70,7 @@ class SEMotionTrackViewController: UIViewController, OCVVideoCameraDelegate {
             displayImageView.image = differenceMat.image()
         }
 
+        // use previous mat(frame) to compare with next mat(frame)
         previousMat = currentMat
 
     }
