@@ -9,7 +9,7 @@ podfile: Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod setup
-- pod install --project-directory=Example
+- travis_wait 40 pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -workspace Example/SwiftEyes.xcworkspace -scheme SwiftEyes-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
